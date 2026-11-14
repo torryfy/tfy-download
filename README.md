@@ -8,7 +8,8 @@ t.fy — набор для чата Twitch: клиент для ПК, расши
 
 | Файл | Что это |
 |---|---|
-| `tfy-windows-x64.zip` | Клиент t.fy для Windows 10/11 (64-бит) |
+| `tfy-setup.exe` | **Установщик** клиента t.fy для Windows 10/11 (64-бит), обновляется сам |
+| `tfy-windows-x64.zip` | Тот же клиент без установки (портативный, без автообновления) |
 | `tfy-extension-chromium.zip` | Расширение для Chrome, Opera, Edge, Brave, Яндекс Браузера |
 | `tfy-overlay.zip` | Прозрачный чат для OBS (Browser Source) |
 | `SHA256SUMS.txt` | Контрольные суммы файлов |
@@ -26,15 +27,23 @@ t.fy — набор для чата Twitch: клиент для ПК, расши
 ## Установка
 
 ### Клиент t.fy (Windows)
-1. Скачай `tfy-windows-x64.zip` и распакуй в любую папку, например `C:\t.fy`.
-2. Запусти `t.fy.exe`.
-3. Если Windows покажет синее окно «Windows защитила ваш компьютер», нажми
+1. Скачай `tfy-setup.exe` и запусти. Права администратора не нужны.
+2. Если Windows покажет синее окно «Windows защитила ваш компьютер», нажми
    **Подробнее → Выполнить в любом случае**. Это обычное окно для программ без платной подписи кода.
-4. Войди через Twitch.
+3. Следуй установщику, t.fy запустится сам.
+4. Войди через Twitch: нажми «Войти», войди на странице Twitch, нажми **Скопировать**,
+   потом в t.fy — **Вставить данные входа**.
 5. Для баллов и покупок нужен **ключ t.fy**: его выдаёт стример. Вставь ключ в настройках t.fy
    (вкладка t.fy) или в окошке расширения. Ключ привязывается к твоему аккаунту Twitch.
 
-Обновление: закрой t.fy, распакуй новую версию поверх старой папки. Настройки и вход сохранятся.
+**Обновления приходят сами:** t.fy проверяет новые версии и предлагает установить (или меню ◆ →
+«Проверить обновления»). Файл проверяется по контрольной сумме, настройки и вход сохраняются.
+
+Без установки: распакуй `tfy-windows-x64.zip` в любую папку и запусти `t.fy.exe`
+(обновлять такую копию нужно вручную).
+
+**Не открывается сервер (у некоторых провайдеров, например МТС)?** t.fy и расширение сами пробуют
+запасные адреса. Если не помогло — напиши, это поможет добавить новый.
 
 ### Расширение для браузера
 Расширения пока нет в магазине Chrome, поэтому оно ставится вручную:
@@ -102,8 +111,9 @@ This repository holds **ready-to-use programs only** — grab them from
 - **OBS chat:** transparent, 7TV / BTTV / FFZ emotes, badges, nick styles and point purchases.
 
 ### Install
-**Client:** unzip `tfy-windows-x64.zip`, run `t.fy.exe`. If SmartScreen appears, click
-**More info → Run anyway**. Sign in with Twitch. Points and purchases need a **t.fy key** from the streamer, bound to your Twitch account
+**Client:** run `tfy-setup.exe` (no admin rights needed; if SmartScreen appears, click
+**More info → Run anyway**). t.fy updates itself: it checks for new versions, verifies the installer by
+SHA-256 and installs it. A portable copy is in `tfy-windows-x64.zip`. Sign in with Twitch. Points and purchases need a **t.fy key** from the streamer, bound to your Twitch account
 (enter it in the t.fy settings tab or in the extension popup). To update, unzip the new version over the old folder.
 
 **Extension:** unzip `tfy-extension-chromium.zip` to a folder you will keep, open `chrome://extensions`
